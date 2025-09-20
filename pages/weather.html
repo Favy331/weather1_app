@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="../../custom css/style.css">
+  <title>Document</title>
+</head>
+<body class="parent-conatiner">
+
+   <nav class="navbar navbar-expand-lg shadow-sm ">
+    <div class="container gap-4">
+      <a class="navbar-brand fw-bold text-primary d-flex align-items-center" href="#">
+        <i class="bi bi-wind me-2"></i> WeatherWise
+      </a>
+       <form class="search-box d-flex mb-2" style=" width: 40vw; height: 7vh;">
+        <input id="search_area" type="text" class="form-control" placeholder="Search for location">
+        <button id="search_button" class="btn btn-primary btn-search" type="submit">Search</button>
+      </form>
+
+       <div id="resultName">
+        </div> 
+    </div>    
+    </nav> 
+     
+    <main class="container my-4">
+
+  <section id="box_container">
+     <div id="load" class="loader d-none"></div>
+  </section>
+
+    <!-- Section 2: Hourly Forecast -->
+    <section class="mb-4">
+      <div class="card shadow-sm p-3">
+        <h5 class="mb-3">Hourly Forecast</h5>
+        <div class="row text-center">
+          <div class="col-6 col-md-3">
+            <p>11:00 AM</p>
+            <i class="bi bi-droplet text-primary fs-3"></i>
+            <p>64°</p>
+            <small class="text-muted">30%</small>
+          </div>
+          <div class="col-6 col-md-3">
+            <p>12:00 PM</p>
+            <i class="bi bi-brightness-high text-warning fs-3"></i>
+            <p>66°</p>
+            <small class="text-muted">10%</small>
+          </div>
+          <div class="col-6 col-md-3">
+            <p>1:00 PM</p>
+            <i class="bi bi-brightness-high text-warning fs-3"></i>
+            <p>68°</p>
+            <small class="text-muted">10%</small>
+          </div>
+          <div class="col-6 col-md-3">
+            <p>2:00 PM</p>
+            <i class="bi bi-cloud text-secondary fs-3"></i>
+            <p>67°</p>
+            <small class="text-muted">20%</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: 5-Day Forecast -->
+    <section>
+      <div class="card shadow-sm p-3">
+        <h5 class="mb-3">5-Day Forecast</h5>
+        <div class="row text-center">
+          <div class="col-6 col-md">
+            <p>Sat</p>
+            <i class="bi bi-brightness-high text-warning fs-3"></i>
+            <p>68° / 45°</p>
+          </div>
+          <div class="col-6 col-md">
+            <p>Sun</p>
+            <i class="bi bi-cloud-rain text-primary fs-3"></i>
+            <p>65° / 50°</p>
+          </div>
+          <div class="col-6 col-md">
+            <p>Mon</p>
+            <i class="bi bi-cloud text-secondary fs-3"></i>
+            <p>62° / 48°</p>
+          </div>
+          <div class="col-6 col-md">
+            <p>Tue</p>
+            <i class="bi bi-brightness-high text-warning fs-3"></i>
+            <p>70° / 52°</p>
+          </div>
+          <div class="col-6 col-md">
+            <p>Wed</p>
+            <i class="bi bi-brightness-high text-warning fs-3"></i>
+            <p>72° / 55°</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+   
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+ <script src="../js/index.js"></script> 
+</body>
+</html>
