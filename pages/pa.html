@@ -12,18 +12,16 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      min-height: 90vh;  
-      margin: 0;          
-      padding: 10px;      
+       padding: 20px;
     }
 
     .weather-wrapper {
-      width: 100vh;
+      width: 100%;
       max-width: 500px;
       background: #fff;
       border-radius: 15px;
       box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-      padding: 30px 20px; 
+      padding: 30px;
       text-align: center;
     }
 
@@ -37,7 +35,7 @@
       padding: 12px 30px;
     }
 
-    
+    /* Loader */
     .loader {
       width: 50px;
       aspect-ratio: 1;
@@ -74,28 +72,26 @@
       padding: 15px;
     }
 
-    
-    h2 {
-      font-size: clamp(1.5rem, 2vw, 2rem);
-    }
   </style>
 </head>
 <body>
   <div class="weather-wrapper">
     <h2 class="mb-4 text-primary fw-bold">Check Your Weather</h2>
 
+    <!-- Search box stacked vertically on small screens -->
     <form class="search-box d-flex flex-column gap-2" style="margin-bottom: 20px;">
       <input id="search_area" type="text" class="form-control" placeholder="Enter location">
       <button id="search_button" class="btn btn-primary btn-search w-100" type="submit">Search</button>
     </form>
 
+    <!-- Loader -->
     <div id="load" class="loader d-none"></div>
 
+    <!-- Weather Results -->
     <section id="box_container" class="shadow-sm rounded">
-      
+      <!-- Dynamic weather data will appear here -->
     </section>
   </div>
-  
 
   <script src="/js/index.js"></script>
 </body>
