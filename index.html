@@ -4,15 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>WeatherWise</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"  rel="stylesheet"> 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
   <link rel="stylesheet" href="./custom css/style.css">
-  
-</head>
-<body>
+ </head>
+<body class="bg-light">
 
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg shadow-sm fixed-top">
+  <!-- Navbar (fixed-top) -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
     <div class="container">
       <a class="navbar-brand fw-bold text-primary d-flex align-items-center" href="#">
         <i class="bi bi-wind me-2"></i> WeatherWise
@@ -20,27 +19,52 @@
     </div>
   </nav>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="container">
-      <h1 class="fw-bold display-5">Your Accurate <br> Weather Companion</h1>
-      <p class="lead mt-3">Enter your name to check your weather</p>
-      <!-- Get strated Box -->
-        <input id="input" type="text" class="mt-5" placeholder="wirte your name">
-        
-        <a id="btn" type="button" class="btn btn-primary ">Get Strated</a>
-        
-  </select>
-</form>
+  <!-- Signup Section -->
+  <section class="signup-section">
+    <div class="container signup-container">
+      <div class="row justify-content-center">
+        <div class="col-12 col-sm-10 col-md-8 col-lg-6 col-xl-5">
+          <div class="card shadow-lg border-0 rounded-4">
+            <div class="card-body p-4">
+              <h2 class="text-center fw-bold text-primary mb-4">Sign Up</h2>
+
+              <form id="signupForm" novalidate>
+                <div >
+                  <label for="name" class="form-label">Full Name</label>
+                  <input type="text" class="form-control" id="name" placeholder="Enter your full name" required>
+                </div>
+
+                <div class="mb-2">
+                  <label for="email" class="form-label">Email</label>
+                  <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+                </div>
+
+                <div class="mb-2">
+                  <label for="password" class="form-label">Password</label>
+                  <input type="password" class="form-control" id="password" placeholder="Enter your password" required>
+                </div>
+
+                <button type="submit" class="btn btn-primary w-100">Create Account</button>
+              </form>
+
+              <p class="text-center mt-3 mb-0">
+                Already have an account? 
+                <a href="login.html" class="text-decoration-none text-primary fw-semibold">Login</a>
+              </p>
+
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
-  <div class="mt-4 text-white" id="result"></div>
+
+  
+  
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
   <script src="./js/index.js"></script>
   <script src="./js/weather.js"></script>
+  <script src="./js/sigup.js"></script>
 </body>
 </html>
- 
-            
-    

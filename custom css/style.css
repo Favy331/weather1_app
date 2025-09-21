@@ -2,7 +2,41 @@ body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
-    .hero {
+   *, *::before, *::after { box-sizing: border-box; }
+    html, body { height: 100%; overflow-x: hidden; }
+    :root { --nav-height: 56px; }
+    body { padding-top: var(--nav-height); }
+
+    .signup-section {
+      min-height: calc(100vh - var(--nav-height));
+      display: flex;
+      align-items: center;
+      padding: 1.5rem 0;      
+    }
+
+     .signup-container { 
+      padding-left: .5rem; 
+      padding-right: .5rem; 
+    }
+
+    .card-body {
+      max-height: calc(100vh - var(--nav-height) - 80px);
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    @media (max-width: 420px) {
+      .signup-section { padding-top: .8rem; padding-bottom: .8rem; min-height: auto; }
+      .card-body { padding: 1rem; }
+    }
+
+    @media (max-width: 360px) {
+      .card { border-radius: .5rem; }
+    }
+    /*---------------------- weather.html--------------------------------*/
+
+/* Weather cards */
+   .hero {
       background: linear-gradient(to bottom, #1a75ff, #003366);
       color: white;
       min-height: 100vh;
@@ -12,7 +46,7 @@ body {
       text-align: center;
       padding: 40px 20px;
     }
-    .search-box {
+    .search-box {   
       max-width: 600px;
       margin: 20px auto 0;
     }
@@ -36,9 +70,6 @@ body {
       color: #1a75ff;
     }
 
-    /*---------------------- weather.html--------------------------------*/
-
-/* Weather cards */
 .weather-card {
   border-radius: 16px;
   padding: 20px;
@@ -137,3 +168,27 @@ body {
 @keyframes l26 {
   100% {transform:rotate(1turn)}
 }
+/* login */
+.page-section {
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 90px 15px 30px; 
+    }
+
+    .card {
+      width: 100%;
+      max-width: 400px;
+    }
+
+    
+    @media (max-width: 576px) {
+      .page-section {
+        padding-top: 100px; 
+        align-items: flex-start; 
+      }
+    }
+
+
+

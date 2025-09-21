@@ -1,5 +1,5 @@
   const inputName = localStorage.getItem("input");
-   document.getElementById("resultName").innerHTML = `<p> Hi, ${inputName} </p>`
+   document.getElementById("resultName").innerHTML = `<h5 class = "text-sucess"> Hi, ${inputName} </h5>`
 
   const searchField = document.getElementById("search_area");
   const form = document.querySelector("form");
