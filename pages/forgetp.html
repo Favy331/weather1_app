@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+  <title>Forgot password</title>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold text-primary d-flex align-items-center" href="#">
+        <i class="bi bi-wind me-2"></i> WeatherWise
+      </a>
+    </div>
+  </nav> 
+
+  <section class="bg-light d-flex justify-content-center align-items-center" style="padding-top: 70px;">
+  <div class="card p-4 shadow-sm w-100" style="max-width: 400px;">
+    <h3 class="mb-3 text-center">Reset Password</h3>
+    <form id="forgotForm">
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" id="email" class="form-control form-control-lg" placeholder="Enter your email" required>
+      </div>
+      <div class="mb-3">
+        <label for="newPassword" class="form-label">New Password</label>
+        <input type="password" id="newPassword" class="form-control form-control-lg" placeholder="Enter new password" required>
+      </div>
+      <div class="mb-3">
+        <label for="confirmPassword" class="form-label">Confirm Password</label>
+        <input type="password" id="confirmPassword" class="form-control form-control-lg" placeholder="Confirm new password" required>
+      </div>
+      <button type="submit" class="btn btn-primary btn-lg w-100">Reset Password</button>
+    </form>
+    <p id="result" class="mt-3 text-center fw-bold"></p>
+  </div>
+</section>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    const form = document.getElementById("forgotForm");
+    const result = document.getElementById("result");
+
+    form.addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const email = document.getElementById("email").value.trim().toLowerCase();
+      const newPassword = document.getElementById("newPassword").value.trim();
+      const confirmPassword = document.getElementById("confirmPassword").value.trim();
+
+     
+      let users = JSON.parse(localStorage.getItem("users")) || [];
+
+      
+      const userIndex = users.findIndex(u => u.email === email);
+
+      if (userIndex === -1) {
+        result.textContent = "Email not found!";
+        result.classList.remove("text-success");
+        result.classList.add("text-danger");
+        return;
+      }
+
+      if (newPassword !== confirmPassword) {
+        result.textContent = "Passwords do not match!";
+        result.classList.remove("text-success");
+        result.classList.add("text-danger");
+        return;
+      }
+
+      
+      users[userIndex].password = newPassword;
+      localStorage.setItem("users", JSON.stringify(users));
+
+      result.textContent = "Password updated successfully! Redirecting...";
+      result.classList.remove("text-danger");
+      result.classList.add("text-success");
+
+     
+      alert("Password updated successfully. You can now log in with your new password!");
+
+      
+      setTimeout(() => {
+        window.location.href = "../pages/login.html";
+      }, 2000);
+    });
+  </script>
+</body>
+</html>

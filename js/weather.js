@@ -14,8 +14,8 @@
 
  (function () {
   const form = document.getElementById('loginForm');
-  const emailEl = document.getElementById('email');
-  const passwordEl = document.getElementById('password');
+  const emailEl = document.getElementById('emailInput');
+  const passwordEl = document.getElementById('passwordInput');
 
   form.addEventListener('submit', function (e) {
     e.preventDefault();
